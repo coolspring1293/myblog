@@ -70,7 +70,7 @@
  $form->add(new jqmInput('submit', 'submit', 'submit', 'log in', '', 'b', true));
 
  $send = $form->add(new jqmButton(), true);
- $send->text('register')->href("register.php");
+ $send->text('register')->href("register.php#");
  /**
  * Disable Form Ajax
  */

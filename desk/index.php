@@ -25,18 +25,18 @@
     $j = new jqmPhp();
 
     /**
-     * Config 'html' and 'head' tag.
+     * Con fig 'html' and 'head' tag.
      */
 
     
     $j->html()->doctype('html');
     $j->head()->title('DESK');
-    //$j->head()->css('http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css');
-    //$j->head()->jq('http://code.jquery.com/jquery-1.4.4.min.js');
-    //$j->head()->jqm('http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js');
-    //$j->head()->add(new jqmLink('css/custom.css'));         // Adding a custom CSS.
-    //$j->head()->add(new jqmScript('js/custom.js'));         // Adding a custom JavaScript.
-    //$j->body()->attribute('onload', 'initCustom();');     // Adding a custom attribute to 'body' tag.
+    $j->head()->css('http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.css');
+    $j->head()->jq('http://code.jquery.com/jquery-1.4.4.min.js');
+    $j->head()->jqm('http://code.jquery.com/mobile/1.0a2/jquery.mobile-1.0a2.min.js');
+    $j->head()->add(new jqmLink('css/custom.css'));         // Adding a custom CSS.
+    $j->head()->add(new jqmScript('js/custom.js'));         // Adding a custom JavaScript.
+    $j->body()->attribute('onload', 'initCustom();');     // Adding a custom attribute to 'body' tag.
 
     /**
      * Create and config a jqmPage object.
@@ -55,7 +55,7 @@
 
     //setcookie("UserName","hhhh",time()+20);
     
-    $p->content()->add('<h1>Hello World！</h1>');
+    $p->content()->add('<h1>Hello April Fool！</h1>');
 
     if (!empty($_REQUEST['username'])) {
         $uName=$_REQUEST['username'] ;
