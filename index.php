@@ -281,8 +281,119 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 
 <h2 id="toc_1">刘旺的个人主页。</h2>
 
-<p><img src="http://liuw53-wp.stor.sinaapp.com/page%2Ficon_01.png" alt="" style="width:180px;"/></p>
+<p><img src="http://liuw53-wp.stor.sinaapp.com/page%2Ficon_01.png" alt="" style="height:120px;"/>
+    <iframe src="http://www.thinkpage.cn/weather/weather.aspx?uid=U6F9BBBCAB&cid=CHGD000000&l=en&p=SMART&a=0&u=C&s=3&m=2&x=1&d=3&fc=&bgc=&bc=&ti=0&in=0&li=&ct=iframe"
+    frameborder="0" scrolling="no" width="500" height="120" allowTransparency="true"></iframe>
 
+</p>
+
+
+<p>
+<?php
+    date_default_timezone_set("PRC");
+	echo '<div id="time"></div>
+<script type="text/javascript">
+function getTimezoneName() {
+    tmSummer = new Date(Date.UTC(2005, 6, 30, 0, 0, 0, 0));
+    so = -1 * tmSummer.getTimezoneOffset();
+    tmWinter = new Date(Date.UTC(2005, 12, 30, 0, 0, 0, 0));
+    wo = -1 * tmWinter.getTimezoneOffset();
+
+    if (-660 == so && -660 == wo) return "Pacific/Midway";
+    if (-600 == so && -600 == wo) return "Pacific/Tahiti";
+    if (-570 == so && -570 == wo) return "Pacific/Marquesas";
+    if (-540 == so && -600 == wo) return "America/Adak";
+    if (-540 == so && -540 == wo) return "Pacific/Gambier";
+    if (-480 == so && -540 == wo) return "US/Alaska";
+    if (-480 == so && -480 == wo) return "Pacific/Pitcairn";
+    if (-420 == so && -480 == wo) return "US/Pacific";
+    if (-420 == so && -420 == wo) return "US/Arizona";
+    if (-360 == so && -420 == wo) return "US/Mountain";
+    if (-360 == so && -360 == wo) return "America/Guatemala";
+    if (-360 == so && -300 == wo) return "Pacific/Easter";
+    if (-300 == so && -360 == wo) return "US/Central";
+    if (-300 == so && -300 == wo) return "America/Bogota";
+    if (-240 == so && -300 == wo) return "US/Eastern";
+    if (-240 == so && -240 == wo) return "America/Caracas";
+    if (-240 == so && -180 == wo) return "America/Santiago";
+    if (-180 == so && -240 == wo) return "Canada/Atlantic";
+    if (-180 == so && -180 == wo) return "America/Montevideo";
+    if (-180 == so && -120 == wo) return "America/Sao_Paulo";
+    if (-150 == so && -210 == wo) return "America/St_Johns";
+    if (-120 == so && -180 == wo) return "America/Godthab";
+    if (-120 == so && -120 == wo) return "America/Noronha";
+    if (-60 == so && -60 == wo) return "Atlantic/Cape_Verde";
+    if (0 == so && -60 == wo) return "Atlantic/Azores";
+    if (0 == so && 0 == wo) return "Africa/Casablanca";
+    if (60 == so && 0 == wo) return "Europe/London";
+    if (60 == so && 60 == wo) return "Africa/Algiers";
+    if (60 == so && 120 == wo) return "Africa/Windhoek";
+    if (120 == so && 60 == wo) return "Europe/Amsterdam";
+    if (120 == so && 120 == wo) return "Africa/Harare";
+    if (180 == so && 120 == wo) return "Europe/Athens";
+    if (180 == so && 180 == wo) return "Africa/Nairobi";
+    if (240 == so && 180 == wo) return "Europe/Moscow";
+    if (240 == so && 240 == wo) return "Asia/Dubai";
+    if (270 == so && 210 == wo) return "Asia/Tehran";
+    if (270 == so && 270 == wo) return "Asia/Kabul";
+    if (300 == so && 240 == wo) return "Asia/Baku";
+    if (300 == so && 300 == wo) return "Asia/Karachi";
+    if (330 == so && 330 == wo) return "Asia/Calcutta";
+    if (345 == so && 345 == wo) return "Asia/Katmandu";
+    if (360 == so && 300 == wo) return "Asia/Yekaterinburg";
+    if (360 == so && 360 == wo) return "Asia/Colombo";
+    if (390 == so && 390 == wo) return "Asia/Rangoon";
+    if (420 == so && 360 == wo) return "Asia/Almaty";
+    if (420 == so && 420 == wo) return "Asia/Bangkok";
+    if (480 == so && 420 == wo) return "Asia/Krasnoyarsk";
+    if (480 == so && 480 == wo) return "Australia/Perth";
+    if (540 == so && 480 == wo) return "Asia/Irkutsk";
+    if (540 == so && 540 == wo) return "Asia/Tokyo";
+    if (570 == so && 570 == wo) return "Australia/Darwin";
+    if (570 == so && 630 == wo) return "Australia/Adelaide";
+    if (600 == so && 540 == wo) return "Asia/Yakutsk";
+    if (600 == so && 600 == wo) return "Australia/Brisbane";
+    if (600 == so && 660 == wo) return "Australia/Sydney";
+    if (630 == so && 660 == wo) return "Australia/Lord_Howe";
+    if (660 == so && 600 == wo) return "Asia/Vladivostok";
+    if (660 == so && 660 == wo) return "Pacific/Guadalcanal";
+    if (690 == so && 690 == wo) return "Pacific/Norfolk";
+    if (720 == so && 660 == wo) return "Asia/Magadan";
+    if (720 == so && 720 == wo) return "Pacific/Fiji";
+    if (720 == so && 780 == wo) return "Pacific/Auckland";
+    if (765 == so && 825 == wo) return "Pacific/Chatham";
+    if (780 == so && 780 == wo) return "Pacific/Enderbury"
+    if (840 == so && 840 == wo) return "Pacific/Kiritimati";
+    return "US/Pacific";
+}
+
+
+        function $(o){
+            return document.getElementById(o);
+        }
+        var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+        var DayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        var ts='.(round(microtime(true)*1000)).';
+        function getTime(){
+            var t=new Date(ts);
+            with(t){
+                var _time = "Server Time: "
+                + getFullYear() + " "
+                + getTimezoneName() + " "
+                + DayArray[getDay()] + " "
+                + monthArray[(getMonth())] + " "
+                + getDate() + " " 
+                + (getHours()<10 ? "0" :"") + getHours() + ":" + (getMinutes()<10 ? "0" :"") + getMinutes() + ":" + (getSeconds()<10 ? "0" :"") + getSeconds();
+            }
+            $("time").innerHTML=_time;
+            setTimeout("getTime()",1000);
+            ts+=1000;
+        }
+        getTime();
+</script>';
+ ?>
+    
+</p>
 <hr/>
 
 <h3 id="toc_2">Code and CV</h3>
@@ -294,7 +405,7 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 <a href="verify.php">CV of LiuWang</a>  <a href="verify.php">Download</a>  <a href="verify.php">PHP</a><br/>
 <a href="https://github.com/coolspring1293">GitHub</a><br/>
 <a href="http://sae.sina.com.cn">SAE</a><br/>
-QR Code  <a href="helloweba.png">Demo</a><br/>
+QR Code Create <a href="qr.php">Demo</a><br/>
 Verification Code <a href="create_code.php">Demo</a></p>
 </blockquote>
 
@@ -389,10 +500,27 @@ Select * from earth where Boy = &#39;SIGNLE&#39; and status = &#39;AVAILABLE&#39
 </li>
 <li>
 <a href="#toc_8">Thank you for visiting.</a>
+    
+
 </li>
 </ul>
 
 
-</div></body>
+
+
+</div>
+
+<?php
+echo '<h1>Find Me!<h1>';
+
+$url = 'https://api.mapbox.com/styles/v1/liuw53/cimi1frx5001vypnh0nzspwah.html?title=true&access_token=pk.eyJ1IjoibGl1dzUzIiwiYSI6ImNpbWkwcGV1NjAwM251cWt1MjVyNWhpYzgifQ.L5mII-QskqbTH-Sijv_qNw#16.5748627386997/23.062705091823688/113.38529509823832/0';
+echo '<iframe width="100%" 
+	height="500px" 
+	frameBorder="0" 
+	src="'. $url .'">
+	</iframe>';
+?>
+
+</body>
 
 </html>
