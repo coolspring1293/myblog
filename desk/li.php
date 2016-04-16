@@ -44,9 +44,16 @@
     die('Could not connect: ' . mysql_error());
     }
 
+     
+    $u_t = $_REQUEST['username'];
+    $p_t = $_REQUEST['password'];
     mysql_select_db("app_liuw53", $con);
-    $result = mysql_query('select count(*) as ct from user where username = "' . $_REQUEST['username'] . '" and password = "' . $_REQUEST['password']. '"');
-    $row = mysql_fetch_array($result);
+    $tmp = "select count(*) as ct from user where username = \"$u_t\" and password = \"$u_p\" ";
+
+    $result = mysql_query($tmp);
+     $p->addContent('<p>' . $tmp. '</p>');
+     
+     $row = mysql_fetch_array($result);
     $tmm = $row['ct'];
  	if ($tmm == 1) 
  	{
