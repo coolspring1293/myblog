@@ -415,6 +415,7 @@ Verification Code <a href="create_code.php">Demo</a></p>
 <p><a href="http://iptv.sysu.edu.cn/index.php?channel=cctv5">CCTV-5</a>  <a href="http://iptv.sysu.edu.cn/index.php?channel=cctv5plus">CCTV-5+</a>  <br/>
 <a href="http://www.arsenal.com/home">Arsenal</a><br/>
 <a href="csl.php">Chinese Super League</a> <br/>
+<a href="premier.php">Barckays Premier League</a> <br/>
 <a href="ucl.php">The UEFA Champions League</a><br/>
 <a href="http://www.bbc.com/sport">BBC Sports</a><br/>
 <a href="http://www.dongqiudi.com">懂球帝</a> </p>
@@ -437,7 +438,9 @@ Verification Code <a href="create_code.php">Demo</a></p>
 <a href="64.php">110月100日</a><br/>
 <a href="ucl.php">作业汇总</a><br/>
 <a href="verify.php">模拟面试题</a><br/>
-<a href="verify.php">正式面试题</a></p>
+<a href="verify.php">正式面试题</a><br/>
+<a href="str2cpp">String to .cpp</a><br/>
+<a href="love/">表白Demo</a></p>
 </blockquote>
 
 <hr/>
@@ -513,6 +516,7 @@ Select * from earth where Boy = &#39;SIGNLE&#39; and status = &#39;AVAILABLE&#39
 
 <?php
 echo '<h1>Find Me!<h1>';
+
 
 $url = 'https://api.mapbox.com/styles/v1/liuw53/cimi1frx5001vypnh0nzspwah.html?title=true&access_token=pk.eyJ1IjoibGl1dzUzIiwiYSI6ImNpbWkwcGV1NjAwM251cWt1MjVyNWhpYzgifQ.L5mII-QskqbTH-Sijv_qNw#16.5748627386997/23.062705091823688/113.38529509823832/0';
 echo '<iframe width="100%" 
