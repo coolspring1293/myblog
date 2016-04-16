@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Page Not Found :(</title>
+        <title>QR Code (⊙_⊙)</title>
         <style>
             ::-moz-selection {
                 background: #b3d4fc;
@@ -158,7 +158,7 @@ if($content){
 
 
     //https://chart.googleapis.com/chart?cht=qr&chld=H&chs={$width}x{$height}&chl={$wen}' target='_blank'>https://chart.googleapis.com/chart?cht=qr&chld=H&chs={$width}x{$height}&chl={$wen}</a><br />
-    $gucl = 'http://chart.googleapis.com/chart?cht=qr&chld=H&chs=' . $width . 'x'. $height . '&chl={' . $wen. '}';
+    $gucl = 'http://chart.googleapis.com/chart?cht=qr&chld=H&chs=' . $width . 'x'. $height . '&chl=' . $wen. '';
     echo '<img src="' . $gucl . '">'.'<br>';
     echo '<a href="' . $gucl . '" download="QR_CODE.png">Download</a>' . '<br>';
     echo '<a href="javascript:history.go(-1);">BACK</a>';
