@@ -2,7 +2,7 @@
 
 <head>
 <meta charset="utf-8">
-<title></title>
+<title>To 阿雯 | Advanced Computer Programming</title>
 <style>
 html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}
 html{line-height:1}
@@ -277,275 +277,113 @@ Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmai
 </style>
 
 <style> @media print{ .hljs{overflow: visible; word-wrap: break-word !important;} }</style></head><body><div class="markdown-body">
-<h1 id="toc_0">Personal Page for LiuWang.</h1>
+<h1 id="toc_0">TO 阿雯</h1>
 
-<h2 id="toc_1">刘旺的个人主页。</h2>
+<h2 id="toc_1">Advanced Computer Programming</h2>
 
-<p><img src="http://liuw53-wp.stor.sinaapp.com/page%2Ficon_01.png" alt="" style="height:120px;"/>
-    <iframe src="http://www.thinkpage.cn/weather/weather.aspx?uid=U6F9BBBCAB&cid=CHGD000000&l=en&p=SMART&a=0&u=C&s=3&m=2&x=1&d=3&fc=&bgc=&bc=&ti=0&in=0&li=&ct=iframe"
-    frameborder="0" scrolling="no" width="500" height="120" allowTransparency="true"></iframe>
-</p>
+<h2 id="toc_2">《高级编程技术》by 李才伟</h2>
 
-<p>
-<iframe frameborder="no" 
-  border="0" 
-  marginwidth="50" 
-  marginheight="100" 
-  width="700" height="86" 
-  src="http://music.163.com/outchain/player?type=2&id=109196&auto=0&height=66"
->
-</iframe>
-</p>
 
-<p>
+<h3 id="toc_3">概述</h3>
+
+<blockquote>
+
+  <?php
+  $nms = Array(
+      "01绪论.doc",
+      "02MFC基础.doc",
+      "03界面编程1-菜单.doc",
+      "04界面编程2-控制条.doc",
+      "05界面编程3-对话框.doc",
+      "06界面编程4-控件.doc",
+      "07界面编程5-鼠标、键盘与光标.doc",
+      "08GDI编程1-绘图.doc",
+      "09GDI编程2—文字、位图与图标.doc",
+      "10GDI编程3—动画.doc",
+      "11GDI编程4—图元文件与打印.doc",
+      "12GDI＋基础编程.doc",
+      "12级《Windows高级编程及实践》试题A及答案案.doc",
+      "13GDI＋高级编程.doc",
+      "14文档与视图.doc",
+      "16.NET基础.doc",
+      "17C＃语言.doc",
+      "18窗体编程.doc",
+      "19WPF编程.doc",
+      "20动态链接库编程.doc",
+      "21网络编程.doc",
+      "22数据库编程.doc",
+      "23多核并行编程.doc",
+      "24VS跨平台移动编程简介.doc",
+      "25Android编程入门.doc",
+      "《高级编程技术》教学大纲.doc",
+      "《高级编程技术》教学方案表.doc",
+      "《高级编程技术》考试要求.doc",
+  );
+  $url = "http://liuw53-wp.stor.sinaapp.com/Advanced%20Computer%20Programming%2Facp_0_";
+  for ($i = 25; $i < 28; $i ++)
+  {
+    $tmp = $i - 25;
+    echo '<p>' . '<a href="'. $url . "$tmp" .'.doc" download="'. $nms[$i] .'">'.  $nms[$i]  .'</a></p>';
+  }
+
+  ?>
+</blockquote>
+
+<h3 id="toc_4">正文</h3>
+
+<blockquote>
 <?php
-    date_default_timezone_set("PRC");
-	echo '<div id="time"></div>
-<script type="text/javascript">
-function getTimezoneName() {
-    tmSummer = new Date(Date.UTC(2005, 6, 30, 0, 0, 0, 0));
-    so = -1 * tmSummer.getTimezoneOffset();
-    tmWinter = new Date(Date.UTC(2005, 12, 30, 0, 0, 0, 0));
-    wo = -1 * tmWinter.getTimezoneOffset();
+$nms = Array(
+    "01绪论.doc",
+    "02MFC基础.doc",
+    "03界面编程1-菜单.doc",
+    "04界面编程2-控制条.doc",
+    "05界面编程3-对话框.doc",
+    "06界面编程4-控件.doc",
+    "07界面编程5-鼠标、键盘与光标.doc",
+    "08GDI编程1-绘图.doc",
+    "09GDI编程2—文字、位图与图标.doc",
+    "10GDI编程3—动画.doc",
+    "11GDI编程4—图元文件与打印.doc",
+    "12GDI＋基础编程.doc",
+    "12级《Windows高级编程及实践》试题A及答案案.doc",
+    "13GDI＋高级编程.doc",
+    "14文档与视图.doc",
+    "16.NET基础.doc",
+    "17C＃语言.doc",
+    "18窗体编程.doc",
+    "19WPF编程.doc",
+    "20动态链接库编程.doc",
+    "21网络编程.doc",
+    "22数据库编程.doc",
+    "23多核并行编程.doc",
+    "24VS跨平台移动编程简介.doc",
+    "25Android编程入门.doc",
+    "《高级编程技术》教学大纲.doc",
+    "《高级编程技术》教学方案表.doc",
+    "《高级编程技术》考试要求.doc",
+  );
+$url = "http://liuw53-wp.stor.sinaapp.com/Advanced%20Computer%20Programming%2Facp_";
+  for ($i = 0; $i < 25; $i ++)
+  {
+      $tmp = $i + 1;
+      echo '<p>' . '<a href="'. $url . "$tmp" .'.doc" download="'. $nms[$i] .'">'.  $nms[$i]  .'</a></p>';
+  }
 
-    if (-660 == so && -660 == wo) return "Pacific/Midway";
-    if (-600 == so && -600 == wo) return "Pacific/Tahiti";
-    if (-570 == so && -570 == wo) return "Pacific/Marquesas";
-    if (-540 == so && -600 == wo) return "America/Adak";
-    if (-540 == so && -540 == wo) return "Pacific/Gambier";
-    if (-480 == so && -540 == wo) return "US/Alaska";
-    if (-480 == so && -480 == wo) return "Pacific/Pitcairn";
-    if (-420 == so && -480 == wo) return "US/Pacific";
-    if (-420 == so && -420 == wo) return "US/Arizona";
-    if (-360 == so && -420 == wo) return "US/Mountain";
-    if (-360 == so && -360 == wo) return "America/Guatemala";
-    if (-360 == so && -300 == wo) return "Pacific/Easter";
-    if (-300 == so && -360 == wo) return "US/Central";
-    if (-300 == so && -300 == wo) return "America/Bogota";
-    if (-240 == so && -300 == wo) return "US/Eastern";
-    if (-240 == so && -240 == wo) return "America/Caracas";
-    if (-240 == so && -180 == wo) return "America/Santiago";
-    if (-180 == so && -240 == wo) return "Canada/Atlantic";
-    if (-180 == so && -180 == wo) return "America/Montevideo";
-    if (-180 == so && -120 == wo) return "America/Sao_Paulo";
-    if (-150 == so && -210 == wo) return "America/St_Johns";
-    if (-120 == so && -180 == wo) return "America/Godthab";
-    if (-120 == so && -120 == wo) return "America/Noronha";
-    if (-60 == so && -60 == wo) return "Atlantic/Cape_Verde";
-    if (0 == so && -60 == wo) return "Atlantic/Azores";
-    if (0 == so && 0 == wo) return "Africa/Casablanca";
-    if (60 == so && 0 == wo) return "Europe/London";
-    if (60 == so && 60 == wo) return "Africa/Algiers";
-    if (60 == so && 120 == wo) return "Africa/Windhoek";
-    if (120 == so && 60 == wo) return "Europe/Amsterdam";
-    if (120 == so && 120 == wo) return "Africa/Harare";
-    if (180 == so && 120 == wo) return "Europe/Athens";
-    if (180 == so && 180 == wo) return "Africa/Nairobi";
-    if (240 == so && 180 == wo) return "Europe/Moscow";
-    if (240 == so && 240 == wo) return "Asia/Dubai";
-    if (270 == so && 210 == wo) return "Asia/Tehran";
-    if (270 == so && 270 == wo) return "Asia/Kabul";
-    if (300 == so && 240 == wo) return "Asia/Baku";
-    if (300 == so && 300 == wo) return "Asia/Karachi";
-    if (330 == so && 330 == wo) return "Asia/Calcutta";
-    if (345 == so && 345 == wo) return "Asia/Katmandu";
-    if (360 == so && 300 == wo) return "Asia/Yekaterinburg";
-    if (360 == so && 360 == wo) return "Asia/Colombo";
-    if (390 == so && 390 == wo) return "Asia/Rangoon";
-    if (420 == so && 360 == wo) return "Asia/Almaty";
-    if (420 == so && 420 == wo) return "Asia/Bangkok";
-    if (480 == so && 420 == wo) return "Asia/Krasnoyarsk";
-    if (480 == so && 480 == wo) return "Australia/Perth";
-    if (540 == so && 480 == wo) return "Asia/Irkutsk";
-    if (540 == so && 540 == wo) return "Asia/Tokyo";
-    if (570 == so && 570 == wo) return "Australia/Darwin";
-    if (570 == so && 630 == wo) return "Australia/Adelaide";
-    if (600 == so && 540 == wo) return "Asia/Yakutsk";
-    if (600 == so && 600 == wo) return "Australia/Brisbane";
-    if (600 == so && 660 == wo) return "Australia/Sydney";
-    if (630 == so && 660 == wo) return "Australia/Lord_Howe";
-    if (660 == so && 600 == wo) return "Asia/Vladivostok";
-    if (660 == so && 660 == wo) return "Pacific/Guadalcanal";
-    if (690 == so && 690 == wo) return "Pacific/Norfolk";
-    if (720 == so && 660 == wo) return "Asia/Magadan";
-    if (720 == so && 720 == wo) return "Pacific/Fiji";
-    if (720 == so && 780 == wo) return "Pacific/Auckland";
-    if (765 == so && 825 == wo) return "Pacific/Chatham";
-    if (780 == so && 780 == wo) return "Pacific/Enderbury"
-    if (840 == so && 840 == wo) return "Pacific/Kiritimati";
-    return "US/Pacific";
-}
+  ?>
+</blockquote>
 
+<h1 id="toc_5">Click Me!</h1>
 
-        function $(o){
-            return document.getElementById(o);
-        }
-        var monthArray = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-        var DayArray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-        var ts='.(round(microtime(true)*1000)).';
-        function getTime(){
-            var t=new Date(ts);
-            with(t){
-                var _time = "Server Time: "
-                + getFullYear() + " "
-                + getTimezoneName() + " "
-                + DayArray[getDay()] + " "
-                + monthArray[(getMonth())] + " "
-                + getDate() + " " 
-                + (getHours()<10 ? "0" :"") + getHours() + ":" + (getMinutes()<10 ? "0" :"") + getMinutes() + ":" + (getSeconds()<10 ? "0" :"") + getSeconds();
-            }
-            $("time").innerHTML=_time;
-            setTimeout("getTime()",1000);
-            ts+=1000;
-        }
-        getTime();
-</script>';
- ?>
-    
-</p>
-<hr/>
-
-<h3 id="toc_2">Code and CV</h3>
-
-<blockquote>
 <p>
-<!--
-<h1>助理去卫生间了，有事情call我18814091386</h1>
--->
-<a href="wp/">Blog for LiuWang</a>
-    <a href="MWeb/"> Markdown</a>
-    <br/>
-<a href="desk/index.php">Desk PHP Demo</a><br/>
-<a href="http://liuwwx.applinzi.com">WeChat Server For LiuWang</a><br/>
-<a href="verify.php">CV of LiuWang</a>  <a href="verify.php">Download</a>  <a href="verify.php">PHP</a><br/>
-<a href="https://github.com/coolspring1293">GitHub</a> <a href="githubio.html">coolspring1293.github.io</a><br/>
-<a href="http://sae.sina.com.cn">SAE</a><br/>
-QR Code Create <a href="qr.php">Demo</a><br/>
-Verification Code <a href="create_code.php">Demo</a></p>
-</blockquote>
+  <strong>
 
-<h3 id="toc_3">Sports</h3>
+    This page written by <a href="http://coolspring1293.github.io">Wang Liu</a>.</p>
 
-<blockquote>
-<p><a href="http://iptv.sysu.edu.cn/index.php?channel=cctv5">CCTV-5</a>  <a href="http://iptv.sysu.edu.cn/index.php?channel=cctv5plus">CCTV-5+</a>  <br/>
-<a href="http://www.arsenal.com/home">Arsenal</a><br/>
-<a href="csl.php">Chinese Super League</a> <br/>
-<a href="premier.php">Barckays Premier League</a> <br/>
-<a href="ucl.php">The UEFA Champions League</a><br/>
-<a href="http://www.bbc.com/sport">BBC Sports</a><br/>
-<a href="http://www.dongqiudi.com">懂球帝</a> </p>
-</blockquote>
+  </strong>
 
-<h3 id="toc_4">Social</h3>
-
-<blockquote>
-<p><a href="https://www.facebook.com/liuw53">Facebook</a><br/>
-<a href="https://twitter.com/liuw53">Twitter</a><br/>
-<a href="https://www.instagram.com/liuw53/">Instagram</a><br/>
-<a href="http://coolspring9.lofter.com">Lofter</a><br/>
-<a href="snowman.html">WeChat</a></p>
-</blockquote>
-
-<h3 id="toc_5">Others</h3>
-
-<blockquote>
-<p><a href="ouzhaoting.php">你感冒好了吗</a><br/>
-<a href="64.php">110月100日</a><br/>
-<a href="ucl.php">作业汇总</a><br/>
-<a href="verify.php">模拟面试题</a><br/>
-<a href="verify.php">正式面试题</a><br/>
-<a href="str2cpp">String to .cpp</a><br/>
-<a href="love/">表白Demo</a></p>
-</blockquote>
-
-<hr/>
-
-<h2 id="toc_6">Have Fun</h2>
-
-<pre><code class="language-cpp">//What I Learn about programming
-long long ago;
-double kill;
-short jj;
-
-//The Secret of Success
-while (noSuccess) {
-    tryAgain();
-    if (Dead)
-        break;
-}
-</code></pre>
-
-<h3 id="toc_7">The Truth of The World</h3>
-
-<pre><code class="language-sql">Select * from earth where Girl = &#39;SIGNLE&#39; and status = &#39;AVAILABLE&#39;;
-(0 row(s) affected)
-
-Select * from earth where Boy = &#39;SIGNLE&#39; and status = &#39;AVAILABLE&#39;;
-(System.outMemory.exception)
-</code></pre>
-
-<h1 id="toc_8">Thank you for visiting.</h1>
-
-<ul>
-<li>
-<a href="#toc_0">TOP</a>
-<ul>
-<li>
-<a href="#toc_1">Personal Page for LiuWang.</a>
-<ul>
-<li>
-<a href="#toc_2">Code and CV</a>
-</li>
-<li>
-<a href="#toc_3">Sports</a>
-</li>
-<li>
-<a href="#toc_4">Social</a>
-</li>
-<li>
-<a href="#toc_5">Others</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_6">Have Fun</a>
-<ul>
-<li>
-<a href="#toc_7">The Truth of The World</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_8">Thank you for visiting.</a>
-    
-
-</li>
-</ul>
-
-
-
-
-</div>
-
-<?php
-echo '<h1>Find Me!<h1>';
-
-
-$url = 'https://api.mapbox.com/styles/v1/liuw53/cimi1frx5001vypnh0nzspwah.html?title=true&access_token=pk.eyJ1IjoibGl1dzUzIiwiYSI6ImNpbWkwcGV1NjAwM251cWt1MjVyNWhpYzgifQ.L5mII-QskqbTH-Sijv_qNw#16.5748627386997/23.062705091823688/113.38529509823832/0';
-echo '<iframe width="100%" 
-	height="500px" 
-	frameBorder="0" 
-	src="'. $url .'">
-	</iframe>';
-?>
-
-    <p>This page written by <a href="http://coolspring1293.github.io">Wang Liu</a>.</p>
-
-  
   <iframe src="http://coolspring1293.github.io/share.html" width="100%" height="100%"></iframe>
 
-</body>
+</div></body>
 
 </html>
