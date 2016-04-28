@@ -4,7 +4,6 @@
  *
  * @package WordPress
  */
-/* add */
 include( ABSPATH . '/sae.php' ); 
 require( ABSPATH . WPINC . '/option.php' );
 
@@ -206,14 +205,14 @@ function wp_maybe_decline_date( $date ) {
 }
 
 /**
- * Convert integer number to format based on the locale.
+ * Convert float number to format based on the locale.
  *
  * @since 2.3.0
  *
  * @global WP_Locale $wp_locale
  *
- * @param int $number   The number to convert based on locale.
- * @param int $decimals Optional. Precision of the number of decimal places. Default 0.
+ * @param float $number   The number to convert based on locale.
+ * @param int   $decimals Optional. Precision of the number of decimal places. Default 0.
  * @return string Converted number in string format.
  */
 function number_format_i18n( $number, $decimals = 0 ) {
@@ -676,8 +675,8 @@ function is_new_day() {
  * @since 2.3.0
  *
  * @see _http_build_query() Used to build the query
- * @see http://us2.php.net/manual/en/function.http-build-query.php for more on what
- *		http_build_query() does.
+ * @link http://us2.php.net/manual/en/function.http-build-query.php for more on what
+ *		 http_build_query() does.
  *
  * @param array $data URL-encode key/value pairs.
  * @return string URL-encoded string.
@@ -995,6 +994,7 @@ function get_status_header_desc( $code ) {
 			305 => 'Use Proxy',
 			306 => 'Reserved',
 			307 => 'Temporary Redirect',
+			308 => 'Permanent Redirect',
 
 			400 => 'Bad Request',
 			401 => 'Unauthorized',
@@ -1015,6 +1015,7 @@ function get_status_header_desc( $code ) {
 			416 => 'Requested Range Not Satisfiable',
 			417 => 'Expectation Failed',
 			418 => 'I\'m a teapot',
+			421 => 'Misdirected Request',
 			422 => 'Unprocessable Entity',
 			423 => 'Locked',
 			424 => 'Failed Dependency',
@@ -1022,6 +1023,7 @@ function get_status_header_desc( $code ) {
 			428 => 'Precondition Required',
 			429 => 'Too Many Requests',
 			431 => 'Request Header Fields Too Large',
+			451 => 'Unavailable For Legal Reasons',
 
 			500 => 'Internal Server Error',
 			501 => 'Not Implemented',
@@ -1332,7 +1334,7 @@ function do_robots() {
 }
 
 /**
- * Test whether blog is already installed.
+ * Test whether WordPress is already installed.
  *
  * The cache will be checked first. If you have a cache plugin, which saves
  * the cache values, then this will work. If you use the default WordPress
@@ -1344,7 +1346,7 @@ function do_robots() {
  *
  * @global wpdb $wpdb WordPress database abstraction object.
  *
- * @return bool Whether the blog is already installed.
+ * @return bool Whether the site is already installed.
  */
 function is_blog_installed() {
 	global $wpdb;
@@ -1518,16 +1520,35 @@ function wp_original_referer_field( $echo = true, $jump_back_to = 'current' ) {
  * @return false|string False on failure. Referer URL on success.
  */
 function wp_get_referer() {
-	if ( ! function_exists( 'wp_validate_redirect' ) )
+	if ( ! function_exists( 'wp_validate_redirect' ) ) {
 		return false;
-	$ref = false;
-	if ( ! empty( $_REQUEST['_wp_http_referer'] ) )
-		$ref = wp_unslash( $_REQUEST['_wp_http_referer'] );
-	elseif ( ! empty( $_SERVER['HTTP_REFERER'] ) )
-		$ref = wp_unslash( $_SERVER['HTTP_REFERER'] );
+	}
 
-	if ( $ref && $ref !== wp_unslash( $_SERVER['REQUEST_URI'] ) )
+	$ref = wp_get_raw_referer();
+
+	if ( $ref && $ref !== wp_unslash( $_SERVER['REQUEST_URI'] ) && $ref !== home_url() . wp_unslash( $_SERVER['REQUEST_URI'] ) ) {
 		return wp_validate_redirect( $ref, false );
+	}
+
+	return false;
+}
+
+/**
+ * Retrieves unvalidated referer from '_wp_http_referer' or HTTP referer.
+ *
+ * Do not use for redirects, use {@see wp_get_referer()} instead.
+ *
+ * @since 4.5.0
+ *
+ * @return string|false Referer URL on success, false on failure.
+ */
+function wp_get_raw_referer() {
+	if ( ! empty( $_REQUEST['_wp_http_referer'] ) ) {
+		return wp_unslash( $_REQUEST['_wp_http_referer'] );
+	} else if ( ! empty( $_SERVER['HTTP_REFERER'] ) ) {
+		return wp_unslash( $_SERVER['HTTP_REFERER'] );
+	}
+
 	return false;
 }
 
@@ -1555,8 +1576,7 @@ function wp_get_original_referer() {
  * @return bool Whether the path was created. True if path already exists.
  */
 function wp_mkdir_p( $target ) {
-
-	/*
+/*
 	$wrapper = null;
 
 	// Strip the protocol.
@@ -1572,12 +1592,15 @@ function wp_mkdir_p( $target ) {
 		$target = $wrapper . '://' . $target;
 	}
 	*/
+
+	///////////////////////////////////////////////////////
 	// from php.net/mkdir user contributed notes
 	if (substr ( $target, 0, 10 ) == 'saestor://') {
     	return true;
 	}
 	$target = str_replace ( '//', '/', $target );
- 
+ 	/////////////////////////////////////////////////////
+
 
 	/*
 	 * Safe mode fails with a trailing slash under certain PHP versions.
@@ -1675,17 +1698,19 @@ function path_join( $base, $path ) {
  *
  * On windows systems, replaces backslashes with forward slashes
  * and forces upper-case drive letters.
- * Ensures that no duplicate slashes exist.
+ * Allows for two leading slashes for Windows network shares, but
+ * ensures that all other duplicate slashes are reduced to a single.
  *
  * @since 3.9.0
  * @since 4.4.0 Ensures upper-case drive letters on Windows systems.
+ * @since 4.5.0 Allows for Windows network shares.
  *
  * @param string $path Path to normalize.
  * @return string Normalized path.
  */
 function wp_normalize_path( $path ) {
 	$path = str_replace( '\\', '/', $path );
-	$path = preg_replace( '|/+|','/', $path );
+	$path = preg_replace( '|(?<=.)/+|', '/', $path );
 	if ( ':' === substr( $path, 1, 1 ) ) {
 		$path = ucfirst( $path );
 	}
@@ -1788,6 +1813,23 @@ function win_is_writable( $path ) {
 }
 
 /**
+ * Retrieves uploads directory information.
+ *
+ * Same as wp_upload_dir() but "light weight" as it doesn't attempt to create the uploads directory.
+ * Intended for use in themes, when only 'basedir' and 'baseurl' are needed, generally in all cases
+ * when not uploading files.
+ *
+ * @since 4.5.0
+ *
+ * @see wp_upload_dir()
+ *
+ * @return array See wp_upload_dir() for description.
+ */
+function wp_get_upload_dir() {
+	return wp_upload_dir( null, false );
+}
+
+/**
  * Get an array containing the current upload directory's path and url.
  *
  * Checks the 'upload_path' option, which should be from the web root folder,
@@ -1812,14 +1854,71 @@ function win_is_writable( $path ) {
  * 'subdir' - sub directory if uploads use year/month folders option is on.
  * 'basedir' - path without subdir.
  * 'baseurl' - URL path without subdir.
- * 'error' - set to false.
+ * 'error' - false or error message.
  *
  * @since 2.0.0
+ * @uses _wp_upload_dir()
  *
  * @param string $time Optional. Time formatted in 'yyyy/mm'. Default null.
+ * @param bool   $create_dir Optional. Whether to check and create the uploads directory. Default true (backwards compatible).
+ * @param bool   $refresh_cache Optional. Whether to refresh the cache. Default false.
  * @return array See above for description.
  */
-function wp_upload_dir( $time = null ) {
+function wp_upload_dir( $time = null, $create_dir = true, $refresh_cache = false ) {
+	static $cache = array();
+
+	$key = sprintf( '%d-%s', get_current_blog_id(), (string) $time );
+
+	if ( $refresh_cache || empty( $cache[ $key ] ) ) {
+		$cache[ $key ] = _wp_upload_dir( $time );
+	}
+
+	/**
+	 * Filter the uploads directory data.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param array $uploads Array of upload directory data with keys of 'path',
+	 *                       'url', 'subdir, 'basedir', and 'error'.
+	 */
+	$uploads = apply_filters( 'upload_dir', $cache[ $key ] );
+
+	if ( $create_dir ) {
+		$path = $uploads['path'];
+		$tested_paths = wp_cache_get( 'upload_dir_tested_paths' );
+
+		if ( ! is_array( $tested_paths ) ) {
+			$tested_paths = array();
+		}
+
+		if ( ! in_array( $path, $tested_paths, true ) ) {
+			if ( ! wp_mkdir_p( $path ) ) {
+				if ( 0 === strpos( $uploads['basedir'], ABSPATH ) ) {
+					$error_path = str_replace( ABSPATH, '', $uploads['basedir'] ) . $uploads['subdir'];
+				} else {
+					$error_path = basename( $uploads['basedir'] ) . $uploads['subdir'];
+				}
+
+				$uploads['error'] = sprintf( __( 'Unable to create directory %s. Is its parent directory writable by the server?' ), esc_html( $error_path ) );
+			} else {
+				$tested_paths[] = $path;
+				wp_cache_set( 'upload_dir_tested_paths', $tested_paths );
+			}
+		}
+	}
+
+	return $uploads;
+}
+
+/**
+ * A non-filtered, non-cached version of wp_upload_dir() that doesn't check the path.
+ *
+ * @access private
+ *
+ * @param string $time Optional. Time formatted in 'yyyy/mm'. Default null.
+ * @return array See wp_upload_dir()
+ */
+function _wp_upload_dir( $time = null ) {
 	$siteurl = get_option( 'siteurl' );
 	$upload_path = trim( get_option( 'upload_path' ) );
 
@@ -1911,36 +2010,14 @@ function wp_upload_dir( $time = null ) {
 	$dir .= $subdir;
 	$url .= $subdir;
 
-	/**
-	 * Filter the uploads directory data.
-	 *
-	 * @since 2.0.0
-	 *
-	 * @param array $uploads Array of upload directory data with keys of 'path',
-	 *                       'url', 'subdir, 'basedir', and 'error'.
-	 */
-	$uploads = apply_filters( 'upload_dir',
-		array(
-			'path'    => $dir,
-			'url'     => $url,
-			'subdir'  => $subdir,
-			'basedir' => $basedir,
-			'baseurl' => $baseurl,
-			'error'   => false,
-		) );
-
-	// Make sure we have an uploads directory.
-	if ( ! wp_mkdir_p( $uploads['path'] ) ) {
-		if ( 0 === strpos( $uploads['basedir'], ABSPATH ) )
-			$error_path = str_replace( ABSPATH, '', $uploads['basedir'] ) . $uploads['subdir'];
-		else
-			$error_path = basename( $uploads['basedir'] ) . $uploads['subdir'];
-
-		$message = sprintf( __( 'Unable to create directory %s. Is its parent directory writable by the server?' ), $error_path );
-		$uploads['error'] = $message;
-	}
-
-	return $uploads;
+	return array(
+		'path'    => $dir,
+		'url'     => $url,
+		'subdir'  => $subdir,
+		'basedir' => $basedir,
+		'baseurl' => $baseurl,
+		'error'   => false,
+	);
 }
 
 /**
@@ -1994,7 +2071,18 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 				$filename2 = str_replace( array( "-$number$ext2", "$number$ext2" ), "-$new_number$ext2", $filename2 );
 				$number = $new_number;
 			}
-			return $filename2;
+
+			/**
+			 * Filter the result when generating a unique file name.
+			 *
+			 * @since 4.5.0
+			 *
+			 * @param string        $filename                 Unique file name.
+			 * @param string        $ext                      File extension, eg. ".png".
+			 * @param string        $dir                      Directory path.
+			 * @param callable|null $unique_filename_callback Callback function that generates the unique file name.
+			 */
+			return apply_filters( 'wp_unique_filename', $filename2, $ext, $dir, $unique_filename_callback );
 		}
 
 		while ( file_exists( $dir . "/$filename" ) ) {
@@ -2006,7 +2094,8 @@ function wp_unique_filename( $dir, $filename, $unique_filename_callback = null )
 		}
 	}
 
-	return $filename;
+	/** This filter is documented in wp-includes/functions.php */
+	return apply_filters( 'wp_unique_filename', $filename, $ext, $dir, $unique_filename_callback );
 }
 
 /**
@@ -2086,10 +2175,10 @@ function wp_upload_bits( $name, $deprecated, $bits, $time = null ) {
 	clearstatcache();
 
 	// Set correct file permissions
-	//$stat = @ stat( dirname( $new_file ) );
-	//$perms = $stat['mode'] & 0007777;
-	//$perms = $perms & 0000666;
-	//@ chmod( $new_file, $perms );
+	$stat = @ stat( dirname( $new_file ) );
+	$perms = $stat['mode'] & 0007777;
+	$perms = $perms & 0000666;
+	@ chmod( $new_file, $perms );
 	clearstatcache();
 
 	// Compute the URL
@@ -3132,7 +3221,7 @@ function smilies_init() {
 		':twisted:' => "\xf0\x9f\x98\x88",
 		  ':arrow:' => "\xe2\x9e\xa1",
 		  ':shock:' => "\xf0\x9f\x98\xaf",
-		  ':smile:' => 'simple-smile.png',
+		  ':smile:' => "\xf0\x9f\x99\x82",
 		    ':???:' => "\xf0\x9f\x98\x95",
 		   ':cool:' => "\xf0\x9f\x98\x8e",
 		   ':evil:' => "\xf0\x9f\x91\xbf",
@@ -3146,11 +3235,11 @@ function smilies_init() {
 		    ':eek:' => "\xf0\x9f\x98\xae",
 		    ':lol:' => "\xf0\x9f\x98\x86",
 		    ':mad:' => "\xf0\x9f\x98\xa1",
-		    ':sad:' => 'frownie.png',
+		    ':sad:' => "\xf0\x9f\x99\x81",
 		      '8-)' => "\xf0\x9f\x98\x8e",
 		      '8-O' => "\xf0\x9f\x98\xaf",
-		      ':-(' => 'frownie.png',
-		      ':-)' => 'simple-smile.png',
+		      ':-(' => "\xf0\x9f\x99\x81",
+		      ':-)' => "\xf0\x9f\x99\x82",
 		      ':-?' => "\xf0\x9f\x98\x95",
 		      ':-D' => "\xf0\x9f\x98\x80",
 		      ':-P' => "\xf0\x9f\x98\x9b",
@@ -3161,8 +3250,8 @@ function smilies_init() {
 		// This one transformation breaks regular text with frequency.
 		//     '8)' => "\xf0\x9f\x98\x8e",
 		       '8O' => "\xf0\x9f\x98\xaf",
-		       ':(' => 'frownie.png',
-		       ':)' => 'simple-smile.png',
+		       ':(' => "\xf0\x9f\x99\x81",
+		       ':)' => "\xf0\x9f\x99\x82",
 		       ':?' => "\xf0\x9f\x98\x95",
 		       ':D' => "\xf0\x9f\x98\x80",
 		       ':P' => "\xf0\x9f\x98\x9b",
@@ -3300,7 +3389,8 @@ function wp_is_numeric_array( $data ) {
  *                              against each object. Default empty array.
  * @param string      $operator Optional. The logical operation to perform. 'or' means
  *                              only one element from the array needs to match; 'and'
- *                              means all elements must match. Default 'and'.
+ *                              means all elements must match; 'not' means no elements may
+ *                              match. Default 'and'.
  * @param bool|string $field    A field from the object to place instead of the entire object.
  *                              Default false.
  * @return array A list of objects or object fields.
@@ -3606,22 +3696,28 @@ function _deprecated_function( $function, $version, $replacement = null ) {
  * This function is to be used in every PHP4 style constructor method that is deprecated.
  *
  * @since 4.3.0
+ * @since 4.5.0 Added the `$parent_class` parameter.
+ *
  * @access private
  *
- * @param string $class   The class containing the deprecated constructor.
- * @param string $version The version of WordPress that deprecated the function.
+ * @param string $class        The class containing the deprecated constructor.
+ * @param string $version      The version of WordPress that deprecated the function.
+ * @param string $parent_class Optional. The parent class calling the deprecated constructor.
+ *                             Default empty string.
  */
-function _deprecated_constructor( $class, $version ) {
+function _deprecated_constructor( $class, $version, $parent_class = '' ) {
 
 	/**
 	 * Fires when a deprecated constructor is called.
 	 *
 	 * @since 4.3.0
+	 * @since 4.5.0 Added the `$parent_class` parameter.
 	 *
-	 * @param string $class   The class containing the deprecated constructor.
-	 * @param string $version The version of WordPress that deprecated the function.
+	 * @param string $class        The class containing the deprecated constructor.
+	 * @param string $version      The version of WordPress that deprecated the function.
+	 * @param string $parent_class The parent class calling the deprecated constructor.
 	 */
-	do_action( 'deprecated_constructor_run', $class, $version );
+	do_action( 'deprecated_constructor_run', $class, $version, $parent_class );
 
 	/**
 	 * Filter whether to trigger an error for deprecated functions.
@@ -3634,9 +3730,23 @@ function _deprecated_constructor( $class, $version ) {
 	 */
 	if ( WP_DEBUG && apply_filters( 'deprecated_constructor_trigger_error', true ) ) {
 		if ( function_exists( '__' ) ) {
-			trigger_error( sprintf( __( 'The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.' ), $class, $version, '<pre>__construct()</pre>' ) );
+			if ( ! empty( $parent_class ) ) {
+				/* translators: 1: PHP class name, 2: PHP parent class name, 3: version number, 4: __construct() method */
+				trigger_error( sprintf( __( 'The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead.' ),
+					$class, $parent_class, $version, '<pre>__construct()</pre>' ) );
+			} else {
+				/* translators: 1: PHP class name, 2: version number, 3: __construct() method */
+				trigger_error( sprintf( __( 'The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.' ),
+					$class, $version, '<pre>__construct()</pre>' ) );
+			}
 		} else {
-			trigger_error( sprintf( 'The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', $class, $version, '<pre>__construct()</pre>' ) );
+			if ( ! empty( $parent_class ) ) {
+				trigger_error( sprintf( 'The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead.',
+					$class, $parent_class, $version, '<pre>__construct()</pre>' ) );
+			} else {
+				trigger_error( sprintf( 'The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.',
+					$class, $version, '<pre>__construct()</pre>' ) );
+			}
 		}
 	}
 
@@ -4700,7 +4810,6 @@ function wp_find_hierarchy_loop_tortoise_hare( $callback, $start, $override = ar
 
 	return false;
 }
-
 /*** Step 4: 添加代码　***/
 //添加如下代码块
 if ( !function_exists('utf8_encode') ) {
@@ -4709,6 +4818,7 @@ if ( !function_exists('utf8_encode') ) {
         return mb_convert_encoding($str, 'UTF-8', $encoding_in);
     }
 }
+
 /**
  * Send a HTTP header to limit rendering of pages to same origin iframes.
  *
@@ -4955,12 +5065,12 @@ function wp_auth_check_html() {
 	<div id="wp-auth-check-wrap" class="<?php echo $wrap_class; ?>">
 	<div id="wp-auth-check-bg"></div>
 	<div id="wp-auth-check">
-	<div class="wp-auth-check-close" tabindex="0" title="<?php esc_attr_e('Close'); ?>"></div>
+	<button type="button" class="wp-auth-check-close button-link"><span class="screen-reader-text"><?php _e( 'Close dialog' ); ?></span></button>
 	<?php
 
 	if ( $same_domain ) {
 		?>
-		<div id="wp-auth-check-form" data-src="<?php echo esc_url( add_query_arg( array( 'interim-login' => 1 ), $login_url ) ); ?>"></div>
+		<div id="wp-auth-check-form" class="loading" data-src="<?php echo esc_url( add_query_arg( array( 'interim-login' => 1 ), $login_url ) ); ?>"></div>
 		<?php
 	}
 

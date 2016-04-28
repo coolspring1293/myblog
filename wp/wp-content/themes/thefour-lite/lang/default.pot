@@ -1,0 +1,555 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: TheFour\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-08-11 13:42:49+0000\n"
+"Last-Translator: none\n"
+"Language-Team: Greta Themes <info@gretathemes.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: css\n"
+"X-Poedit-SearchPathExcluded-2: fonts\n"
+"X-Poedit-SearchPathExcluded-3: img\n"
+"X-Poedit-SearchPathExcluded-4: js\n"
+"X-Poedit-SearchPathExcluded-5: lang\n"
+
+#: archive-jetpack-portfolio.php:12 taxonomy-jetpack-portfolio-type.php:12
+#: template-parts/front-page-portfolio.php:30
+msgid "All"
+msgstr ""
+
+#: comments.php:27
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:27
+msgid "% Comments"
+msgstr ""
+
+#: comments.php:38
+msgid "Pingback"
+msgid_plural "Pingbacks"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:49
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:52
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:56
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:69 template-parts/content-hero.php:28
+msgid "Comments are closed."
+msgstr ""
+
+#: comments.php:76
+msgid "Your email address will not be published."
+msgstr ""
+
+#: functions.php:50
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:51
+msgid "Social Links Menu"
+msgstr ""
+
+#: functions.php:66
+msgid "Primary Sidebar"
+msgstr ""
+
+#: functions.php:75
+#, php-format
+msgid "Footer %d"
+msgstr ""
+
+#: header.php:37
+msgid "Menu"
+msgstr ""
+
+#: inc/customizer/customizer.php:68
+msgid "Portfolios"
+msgstr ""
+
+#: inc/customizer/customizer.php:75
+msgid "Theme Options"
+msgstr ""
+
+#: inc/customizer/customizer.php:80
+msgid "Header"
+msgstr ""
+
+#: inc/customizer/customizer.php:86
+msgid "Layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:92
+msgid "Footer"
+msgstr ""
+
+#: inc/customizer/customizer.php:104
+msgid "Portfolios Page Title"
+msgstr ""
+
+#: inc/customizer/customizer.php:112
+msgid "Portfolios Page Content"
+msgstr ""
+
+#: inc/customizer/customizer.php:124
+msgid "Portfolios Page Featured Image"
+msgstr ""
+
+#: inc/customizer/customizer.php:140
+msgid "Topbar"
+msgstr ""
+
+#: inc/customizer/customizer.php:141
+msgid "The topbar is displayed at the very top of the page, above the header image and navbar. It's only displayed only if either topbar text is entered below or the Social Links Menu location has menu (see Menus panel in the Customizer)."
+msgstr ""
+
+#: inc/customizer/customizer.php:147
+msgid "Topbar text"
+msgstr ""
+
+#: inc/customizer/customizer.php:151
+msgid "This text will be displayed on the left of the topbar. HTML is allowed."
+msgstr ""
+
+#: inc/customizer/customizer.php:158
+msgid "Navbar"
+msgstr ""
+
+#: inc/customizer/customizer.php:159
+msgid "The navbar contains website title (or logo) and the main navigation."
+msgstr ""
+
+#: inc/customizer/customizer.php:165
+msgid "Navbar position"
+msgstr ""
+
+#: inc/customizer/customizer.php:169
+msgid "Overlay the header image"
+msgstr ""
+
+#: inc/customizer/customizer.php:170
+msgid "Above the header image"
+msgstr ""
+
+#: inc/customizer/customizer.php:171
+msgid "Below the header image"
+msgstr ""
+
+#: inc/customizer/customizer.php:178
+msgid "Navbar fixed to top when scroll?"
+msgstr ""
+
+#: inc/customizer/customizer.php:181
+msgid "Select this option if you want the navbar stuck to the top of the page when scroll down."
+msgstr ""
+
+#: inc/customizer/customizer.php:190
+msgid "Logo"
+msgstr ""
+
+#: inc/customizer/customizer.php:193
+msgid "The logo will be displayed on the left of the navbar. If no logo is selected, the website title will be displayed."
+msgstr ""
+
+#: inc/customizer/customizer.php:210
+msgid "Hero content"
+msgstr ""
+
+#: inc/customizer/customizer.php:213
+msgid "Use this setting to enter custom content for the hero area. This content will replace the website title and description. You can use HTML code (including images) and shortcodes."
+msgstr ""
+
+#: inc/customizer/customizer.php:225
+msgid "Archive page layout style"
+msgstr ""
+
+#: inc/customizer/customizer.php:229
+msgid "List"
+msgstr ""
+
+#: inc/customizer/customizer.php:230
+msgid "Grid"
+msgstr ""
+
+#: inc/customizer/customizer.php:231
+msgid "Thumbnail Text"
+msgstr ""
+
+#: inc/customizer/customizer.php:245
+msgid "Archive page sidebar layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:249 inc/customizer/customizer.php:269
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/customizer/customizer.php:250 inc/customizer/customizer.php:270
+msgid "Sidebar Left"
+msgstr ""
+
+#: inc/customizer/customizer.php:251 inc/customizer/customizer.php:271
+msgid "Sidebar Right"
+msgstr ""
+
+#: inc/customizer/customizer.php:265
+msgid "Single post sidebar layout"
+msgstr ""
+
+#: inc/customizer/customizer.php:282
+msgid "Single post title position"
+msgstr ""
+
+#: inc/customizer/customizer.php:286
+msgid "Left"
+msgstr ""
+
+#: inc/customizer/customizer.php:287
+msgid "Center"
+msgstr ""
+
+#: inc/customizer/customizer.php:288
+msgid "Right"
+msgstr ""
+
+#: inc/customizer/customizer.php:298
+msgid "Recent Work"
+msgstr ""
+
+#: inc/customizer/customizer.php:302
+msgid "Portfolio section title"
+msgstr ""
+
+#: inc/customizer/customizer.php:312 inc/header.php:124 inc/header.php:136
+msgid "Testimonials"
+msgstr ""
+
+#: inc/customizer/customizer.php:316
+msgid "Testimonial section title"
+msgstr ""
+
+#: inc/customizer/customizer.php:325
+msgid "Call to action section content"
+msgstr ""
+
+#: inc/customizer/customizer.php:328
+msgid "Use this section to display special offers for your products or services. HTML and shortcodes are allowed. To display buttons, use a link with class <code>button</code> or <code>button-minimal</code>."
+msgstr ""
+
+#: inc/customizer/customizer.php:333
+msgid "Latest Updates"
+msgstr ""
+
+#: inc/customizer/customizer.php:337
+msgid "Blog section title"
+msgstr ""
+
+#: inc/customizer/customizer.php:342 inc/customizer/customizer.php:350
+msgctxt "Front end default tag slug for featured blog posts"
+msgid "front-page"
+msgstr ""
+
+#: inc/customizer/customizer.php:346
+msgid "Blog posts tag name"
+msgstr ""
+
+#: inc/customizer/customizer.php:349
+#, php-format
+msgid "Use a <a href=\"%s\">tag</a> to make your posts displayed in Blog section in the front page. If no posts match the tag, latest posts will be displayed instead."
+msgstr ""
+
+#: inc/customizer/customizer.php:358
+msgid "Don&rsquo;t display tag on front end."
+msgstr ""
+
+#: inc/customizer/customizer.php:368
+msgid "Flourish"
+msgstr ""
+
+#: inc/customizer/customizer.php:371
+msgid "The flourish image will be displayed in the bottom of the front page. This can be an image of client logos, a promotional banner, a map showing where your business is located or anything else that you can think to put in this space."
+msgstr ""
+
+#: inc/customizer/customizer.php:378
+msgid "Flourish section title"
+msgstr ""
+
+#: inc/customizer/customizer.php:386
+msgid "Footer left text"
+msgstr ""
+
+#: inc/customizer/customizer.php:390
+msgid "This text will be displayed on the left of the footer. HTML and shortcode are allowed."
+msgstr ""
+
+#: inc/customizer/customizer.php:394
+msgid "Footer right text"
+msgstr ""
+
+#: inc/customizer/customizer.php:398
+msgid "This text will be displayed on the right of the footer. HTML and shortcode are allowed."
+msgstr ""
+
+#: inc/header.php:108
+#, php-format
+msgid "Search results: \"%s\""
+msgstr ""
+
+#: inc/header.php:112 template-parts/content-category.php:6
+#, php-format
+msgid "(page %s of %s)"
+msgstr ""
+
+#: inc/media.php:64
+msgctxt "Lato font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/media.php:73
+msgctxt "Montserrat font: on or off"
+msgid "on"
+msgstr ""
+
+#: inc/media.php:82
+msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: inc/social-buttons.php:39
+msgid "Share this on Facebook"
+msgstr ""
+
+#: inc/social-buttons.php:58
+msgid "Tweet on Twitter"
+msgstr ""
+
+#: inc/social-buttons.php:77
+msgid "Share on Google+"
+msgstr ""
+
+#: inc/template-tags.php:21 template-parts/content.php:24
+#, php-format
+msgid "Continue reading &raquo; %s"
+msgstr ""
+
+#: inc/template-tags.php:64
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/widgets/dribbble-widget.php:17
+msgid "Displays your latest Dribbble photos."
+msgstr ""
+
+#: inc/widgets/dribbble-widget.php:18
+msgid "Dribbble Widget"
+msgstr ""
+
+#: inc/widgets/dribbble-widget.php:72 inc/widgets/flickr-widget.php:49
+#: inc/widgets/video-widget.php:77
+msgid "Title"
+msgstr ""
+
+#: inc/widgets/dribbble-widget.php:76
+msgid "Dribbble username"
+msgstr ""
+
+#: inc/widgets/dribbble-widget.php:80 inc/widgets/flickr-widget.php:57
+msgid "Number of images to display:"
+msgstr ""
+
+#: inc/widgets/flickr-widget.php:15
+msgid "Displays your latest Flickr photos."
+msgstr ""
+
+#: inc/widgets/flickr-widget.php:16
+msgid "Flickr Widget"
+msgstr ""
+
+#: inc/widgets/flickr-widget.php:53
+msgid "Flickr ID (use <a target=\"_blank\" href=\"http://www.idgettr.com\">idGettr</a>):"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:18
+msgid "List of posts"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:19
+msgid "Posts"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:29
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:137
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:142
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:146
+msgid "A list post of categories or tag.:"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:154
+msgid "Display post thumbnail?"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:158
+msgid "Display post date?"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:171
+msgid "Select"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:178
+msgid "Categories"
+msgstr ""
+
+#: inc/widgets/posts-widget.php:192
+msgid "Tags"
+msgstr ""
+
+#: inc/widgets/video-widget.php:15
+msgid "Displays a video of your choosing."
+msgstr ""
+
+#: inc/widgets/video-widget.php:16
+msgid "Video Widget"
+msgstr ""
+
+#: inc/widgets/video-widget.php:81
+msgid "Video URL"
+msgstr ""
+
+#: index.php:23
+#, php-format
+msgid "Page %s of %s"
+msgstr ""
+
+#: index.php:38 search.php:30
+msgid "&laquo; Previous"
+msgstr ""
+
+#: index.php:39 search.php:31
+msgid "Next &raquo;"
+msgstr ""
+
+#: searchform.php:8
+msgid "Search form"
+msgstr ""
+
+#: searchform.php:9
+msgid "Search"
+msgstr ""
+
+#: single.php:41
+msgid "Next"
+msgstr ""
+
+#: single.php:42
+msgid "Next post:"
+msgstr ""
+
+#: single.php:44
+msgid "Previous"
+msgstr ""
+
+#: single.php:45
+msgid "Previous post:"
+msgstr ""
+
+#: template-parts/comment-ping.php:2
+msgid "Pingback:"
+msgstr ""
+
+#: template-parts/comment-ping.php:2
+msgid "(Edit)"
+msgstr ""
+
+#: template-parts/comment.php:14
+msgid "(Post author)"
+msgstr ""
+
+#: template-parts/comment.php:29
+msgid "Awaiting moderation"
+msgstr ""
+
+#: template-parts/comment.php:36
+msgid "Edit"
+msgstr ""
+
+#: template-parts/comment.php:37
+msgid "Reply"
+msgstr ""
+
+#: template-parts/content-error-404.php:1
+msgid "Error 404"
+msgstr ""
+
+#: template-parts/content-error-404.php:3
+msgid "It seems like you have tried to open a page that doesn't exist. It could have been deleted, moved, or it never existed at all. You are welcome to search for what you are looking for with the form below."
+msgstr ""
+
+#: template-parts/content-grid.php:24
+msgid "Continue reading &raquo;"
+msgstr ""
+
+#: template-parts/content-hero.php:19
+#, php-format
+msgid "by %s &mdash; in %s."
+msgstr ""
+
+#: template-parts/content-hero.php:24
+msgid "No comment."
+msgstr ""
+
+#: template-parts/content-hero.php:25
+msgid "1 Comment."
+msgstr ""
+
+#: template-parts/content-hero.php:26
+msgid "% Comments."
+msgstr ""
+
+#: template-parts/content-none.php:13
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:19
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:28
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr ""
