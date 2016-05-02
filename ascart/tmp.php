@@ -1,58 +1,23 @@
+
+
 <?php
-$f_filename = 'f_filename';
-$f_bcolor   = 'bcolor';
-$f_fchar    = 'fchar';
-$f_ratio    = 'f_ratio';
-$f_mode     = 'f_mode';
-
-
-$files = $_FILES[$f_filename];
-/*
-if ($_FILES[$f_filename]["error"] > 0)
-  {
-  echo "Error: " . $_FILES["f_filename"]["error"] . "<br />";
-  }
-else
-  {
-  echo "Upload: " . $_FILES["f_filename"]["name"] . "<br />";
-  echo "Type: " . $_FILES["f_filename"]["type"] . "<br />";
-  echo "Size: " . ($_FILES["f_filename"]["size"] / 1024) . " Kb<br />";
-  echo "Stored in: " . $_FILES["f_filename"]["tmp_name"];
-  }*/
-
-$name = 'art/ascart-'.time().'.jpg';
-$form_data =$files['tmp_name'];
-
-
-$s2 = new SaeStorage();
-$img = new SaeImage();
-$img_data = file_get_contents($form_data);//获取本地上传的图片数据
-$img->setData($img_data);
-// $img->resize(180,180); //图片缩放为180*180
-$img->improve();//提高图片质量的函数
-$new_data = $img->exec(); // 执行处理并返回处理后的二进制数据
-$s2->write('wp',$name,$new_data);//将public修改为自己的storage 名称
-$url= $s2->getUrl('wp',$name);//将public修改为自己的storage 名称echo "文件名：".$name."<br/>";
-//echo "Image url:".$url."<br/>";
-//echo "<img src='$url' />";
 
 
 
-$filename =$url;
-$radio = $_POST[$f_ratio];
-$str = $_POST[$f_fchar];
-$md = $_POST[$f_mode];
-$clr = $_POST[$f_bcolor];
 
-/*
-echo 'name: '.$filename . "<br/>";
-echo 'radio: ' . $radio . "<br/>";
-echo 'str: '.$str . "<br/>";
-echo 'md: '. $md . "<br/>";
-echo 'clr: '. $clr . "<br/>";
-echo "--------------" . '<br>';
-我发现竟然可以这样写代码之后，就醉了
-*/
+
+
+
+
+
+
+$filename ="http://liuw53-wp.stor.sinaapp.com/icon%2Ficon_0.png";
+$radio = 0.5;
+$str = 'IMISSYOU';
+$md = 0;
+$clr = '#000000';
+
+
 // set background color
 
 
@@ -141,3 +106,5 @@ imagedestroy($image_p);
 
 echo '</body>';
 ?>
+
+

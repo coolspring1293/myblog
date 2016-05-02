@@ -422,9 +422,11 @@ function getTimezoneName() {
 
 <a href="verify.php">CV of LiuWang</a>  <a href="verify.php">Download</a>  <a href="verify.php">PHP</a><br/>
 <a href="https://github.com/coolspring1293">GitHub</a> <a href="githubio.html">coolspring1293.github.io</a><br/>
-<a href="http://sae.sina.com.cn">SAE</a><br/>
+<a href="http://sae.sina.com.cn">SAE</a>   
+<a href="http://liuw53.mail.sinanet.com">Mail for liuw53.top</a> <br/>
 QR Code Create <a href="qr.php">Demo</a><br/>
-Verification Code <a href="create_code.php">Demo</a></p>
+Verification Code <a href="create_code.php">Demo</a><br/>
+ASCII Art <a href="ascart/index.php">Demo</a></p>
 </blockquote>
 
 <h3 id="toc_3">Sports</h3>
