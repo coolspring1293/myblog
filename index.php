@@ -426,6 +426,7 @@ function getTimezoneName() {
 <a href="http://liuw53.mail.sinanet.com">Mail for liuw53.top</a> <br/>
 QR Code Create <a href="qr.php">Demo</a><br/>
 Verification Code <a href="create_code.php">Demo</a><br/>
+Get Short Link <a href="shortlink.php">Demo</a><br/>
 ASCII Art <a href="ascart/index.php">Demo</a></p>
 </blockquote>
 
