@@ -1,0 +1,40 @@
+/**
+ * Style for customizer
+ *
+ * -----------------------------------------------------------------------------
+ */
+/**
+ * Radio Image Control
+ * -----------------------------------------------------------------------------
+ */
+.customize-control-radio-image input[type="radio"] {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+}
+.customize-control-radio-image img {
+  box-sizing: border-box;
+  max-width: 100%;
+  height: auto;
+  padding: 2px;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+.customize-control-radio-image img:hover,
+.customize-control-radio-image img:focus {
+  border-color: #00a0d2;
+}
+.customize-control-radio-image input:checked + span + img {
+  border-color: #00a0d2;
+}
+/**
+ * Custom Content Control
+ * -----------------------------------------------------------------------------
+ */
+.customize-control-custom-content h4 {
+  text-transform: uppercase;
+  font-size: 1.1em;
+}
