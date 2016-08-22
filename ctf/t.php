@@ -1,1 +1,0 @@
-<iframe src="http://www.sofascore.com/event/7045716/lineups/embed" width="100%" height="573" frameborder="0" scrolling="no"></iframe><div><a href="http://www.sofascore.com/south-korea-spain/YTbsKUb" target="_blank">Spain  -  South Korea Live Score</a></div>
