@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Personal Page for LiuWang</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+	</head>
+
+	<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.thinkpage.cn/widget/chameleon.js"))</script>
+	<script>
+		tpwidget(
+			"init", {
+			    "flavor": "bubble",
+			    "location": "WS0E9D8WN298",
+			    "geolocation": "enabled",
+			    "position": "top-right",
+			    "margin": "10px 10px",
+			    "language": "en",
+			    "unit": "c",
+			    "theme": "chameleon",
+			    "uid": "U6F9BBBCAB",
+			    "hash": "fa98bcf698d5bac8e8938b67cf98abc3"
+			}
+		);
+		tpwidget("show");
+	</script>
+
+	<body id="top">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="http://www.liuw53.top/" class="image avatar"><img src="http://www.liuw53.top/img/avatar_p_01.png" alt="" /></a>
+				<h1>
+					<strong>I am Liu Wang</strong>, a programming <br/> 
+					monkey, is listening music and<br/>
+					clicking the keyboard just now!
+				</h1>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="https://github.com/coolspring1293" class="icon fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://www.facebook.com/liuw53" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="https://twitter.com/liuw53" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-tumblr"><span class="label">Tumblr</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>Copyright &copy; 2017 Wang Liu. All rights reserved. </li><li>Powerred by <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.poptrox.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
