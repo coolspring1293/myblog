@@ -109,34 +109,12 @@
 				<section id="two">
 
 					<h2>Travel</h2>
-						<p>
-相逢在鄂尔多斯|库布齐沙漠与康巴什<br/>
-夜游潮州|广济桥、韩江与牌坊街<br/>
-厦门|隧道、海滩与小吃<br/>
-泉州|清源山<br/>
-食在广州<br/>
-新加坡樟宜机场|买买买<br/>
-东爪哇的火山|婆罗摩火山与宜珍火山<br/>
-乌布大雨|皇宫、市场、猴林、圣泉、阿勇河<br/>
-龙目岛的圣吉吉海滩|酒店<br/>
-吉利艾尔岛|马车、海滩、餐厅、小别墅<br/>
-乌鲁瓦图-库塔-水明漾|情人崖，海神庙，玩吃逛<br/>
-吉隆坡|国家博物馆，购物<br/>
-长沙橘子洲跨年|焰火、岳麓山、橘子洲头小火车<br/>
-
-						</p>
 
 						<div class="row">
 							<article class="6u 12u$(xsmall) work-item">
 								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>相逢在鄂尔多斯</h3>
-								<p>库布齐沙漠与康巴什</p>
-							</article>
-
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>夜游潮州</h3>
-								<p>广济桥、韩江与牌坊街</p>
+								<h3>Magna sed consequat tempus</h3>
+								<p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
 							</article>
 							
 						</div>

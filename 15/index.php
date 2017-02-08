@@ -110,7 +110,7 @@
 
 					<h2>Travel</h2>
 						<p>
-相逢在鄂尔多斯|库布齐沙漠与康巴什<br/>
+<!-- 相逢在鄂尔多斯|库布齐沙漠与康巴什<br/>
 夜游潮州|广济桥、韩江与牌坊街<br/>
 厦门|隧道、海滩与小吃<br/>
 泉州|清源山<br/>
@@ -123,7 +123,7 @@
 乌鲁瓦图-库塔-水明漾|情人崖，海神庙，玩吃逛<br/>
 吉隆坡|国家博物馆，购物<br/>
 长沙橘子洲跨年|焰火、岳麓山、橘子洲头小火车<br/>
-
+ -->
 						</p>
 
 						<div class="row">
@@ -138,8 +138,24 @@
 								<h3>夜游潮州</h3>
 								<p>广济桥、韩江与牌坊街</p>
 							</article>
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="images/fulls/03.jpg" class="image fit thumb"><img src="images/thumbs/03.jpg" alt="" /></a>
+								<h3>东爪哇的火山</h3>
+								<p>婆罗摩火山与宜珍火山</p>
+							</article>
+							<article class="6u 12u$(xsmall) work-item">
+								<a href="images/fulls/04.jpg" class="image fit thumb"><img src="images/thumbs/04.jpg" alt="" /></a>
+								<h3>乌布大雨</h3>
+								<p>皇宫、市场、猴林、圣泉、阿勇河</p>
+							</article>
 							
 						</div>
+
+
+						<?php
+
+						echo "<p>测试输出。</p>";
+						?>
 
 				</section>
 
